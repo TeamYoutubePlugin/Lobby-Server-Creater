@@ -22,6 +22,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\level\Level;
 use MyPlot\provider\SQLiteDataProvider;
 use MyPlot\provider\EconomyProvider;
+use pocketmine\event\entity\EntityLevelChangeEvent;
 
 class MyPlot extends PluginBase implements Listener
 {
@@ -413,6 +414,22 @@ class MyPlot extends PluginBase implements Listener
                 $settings[$key] = $config->get($key);
             }
             $this->levels[$levelName] = new PlotLevelSettings($levelName, $settings);
+        }
+    }
+    
+    public function onLevelChange(EntityLevelChangeEvent $event, Server $server) {
+        $player = $event->getEntity();
+        $world = $player->getLevel()->getName();
+        $gamemode = $this->getConfig()->getNested("DefaultWorld.Gamemode");
+        $plotLevel = $this->getLevelSettings($plot->levelName);
+        $defaultGamemode = $server->getDefaultGamemode();
+        if ($player instanceof Player) {
+            if($world == $plotLevel) {
+                $player->setGamemode($gamemode);
+            } else {
+                $player->setGamemode($defaultGamemode);
+            }
+            }
         }
     }
 
