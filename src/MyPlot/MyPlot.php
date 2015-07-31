@@ -322,6 +322,7 @@ class MyPlot extends PluginBase implements Listener
         $this->reloadConfig();
         $this->getLogger()->info(TextFormat::GREEN."Loading the Plot Framework!");
         $this->getLogger()->warning(TextFormat::YELLOW."It seems that you are running the development build of MyPlot! Thats cool, but it CAN be very, very buggy! Just be careful when using this plugin and report any issues to".TextFormat::GOLD." http://github.com/wiez/MyPlot/issues");
+        $this->getLogger()->warning(TextFormat::RED."You are running on the unstable development branch of MyPlot. It is highly recommended that you should not use this for production."); //Only for the Dev branch.
 
         $pluginManager = $this->getServer()->getPluginManager();
         $pluginManager->registerEvent("pocketmine\\event\\block\\BlockBreakEvent", $this, EventPriority::HIGH, new MethodEventExecutor("onBlockBreak"), $this, false);
@@ -405,6 +406,7 @@ class MyPlot extends PluginBase implements Listener
                 "ClearPrice" => $this->getConfig()->getNested("DefaultWorld.ClearPrice"),
                 "DisposePrice" => $this->getConfig()->getNested("DefaultWorld.DisposePrice"),
                 "ResetPrice" => $this->getConfig()->getNested("DefaultWorld.ResetPrice"),
+                "Gamemode" => $this->getConfig()->getNested("DefaultWorld.Gamemode")
             ];
             $config = new Config($filePath, Config::YAML, $default);
             foreach (array_keys($default) as $key) {
