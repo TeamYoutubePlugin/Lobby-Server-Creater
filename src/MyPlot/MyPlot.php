@@ -406,7 +406,7 @@ class MyPlot extends PluginBase implements Listener
                 "ClearPrice" => $this->getConfig()->getNested("DefaultWorld.ClearPrice"),
                 "DisposePrice" => $this->getConfig()->getNested("DefaultWorld.DisposePrice"),
                 "ResetPrice" => $this->getConfig()->getNested("DefaultWorld.ResetPrice"),
-                "Gamemode" => $this->getConfig()->getNested("DefaultWorld.Gamemode")
+                "Gamemode" => $this->getConfig()->getNested("DefaultWorld.Gamemode"),
             ];
             $config = new Config($filePath, Config::YAML, $default);
             foreach (array_keys($default) as $key) {
