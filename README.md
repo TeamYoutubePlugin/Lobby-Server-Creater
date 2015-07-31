@@ -1,5 +1,7 @@
-MyPlot
+MyPlot - Development Branch
 ======
+
+__**THIS IS THE DEVELOPMENT BRANCH FOR MYPLOT. THIS IS USUALLY UNSTABLE AND CAN RESULT IN A CRASH**__
 
 **Create, manage, and build in protected plots! Keep your builds safe from griefers!**
 
