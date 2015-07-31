@@ -51,3 +51,5 @@ DefaultWorld:
   #How high a plot is
   BottomBlock: '7'
   #The block at the way bottom (Default is Bedrock)
+  Gamemode: 0
+  #The gamemode of the plots (NOT IMPLEMENTED)
