@@ -28,6 +28,7 @@ class PlotLevelSettings
             $this->clearPrice = self::parseNumber($settings, "ClearPrice", 0);
             $this->disposePrice = self::parseNumber($settings, "DisposePrice", 0);
             $this->resetPrice = self::parseNumber($settings, "ResetPrice", 0);
+            $this->gamemode = self::parseNumber($settings, "Gamemode", 0);
         }
     }
 
