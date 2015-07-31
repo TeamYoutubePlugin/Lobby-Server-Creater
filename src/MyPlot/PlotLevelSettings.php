@@ -10,7 +10,7 @@ class PlotLevelSettings
     public $roadBlock, $wallBlock, $plotFloorBlock, $plotFillBlock, $bottomBlock;
     /** @var int */
     public $roadWidth, $plotSize, $groundHeight, $maxPlotsPerPlayer, $claimPrice, $clearPrice,
-            $disposePrice, $resetPrice;
+            $disposePrice, $resetPrice, $gamemode;
 
     public function __construct($name, $settings = []) {
         $this->name = $name;
