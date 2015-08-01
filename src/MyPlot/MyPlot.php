@@ -429,7 +429,6 @@ class MyPlot extends PluginBase implements Listener
             } else {
                 $player->setGamemode($defaultGamemode);
             }
-            }
         }
     }
 
